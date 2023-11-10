@@ -9,16 +9,16 @@ import {
   NavbarMenuItem,
   Link,
 } from "@nextui-org/react";
-import { DinamizandoLogo } from "./dinamizandoLogo.js";
+import { DinamizandoLogo } from "./DinamizandoLogo.js";
 
-const NavbarDinamizando = () => {
+const DinamizandoNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
     { id: 1, name: "Home", url: "/" },
     { id: 2, name: "UESC English", url: "/uesc-english" },
     { id: 3, name: "Conversation Club", url: "/conversation-club" },
-    { id: 4, name: "Mais", url: "/" },
+    { id: 4, name: "Certificados", url: "/certificados" },
   ];
 
   return (
@@ -82,4 +82,4 @@ const NavbarDinamizando = () => {
   );
 };
 
-export default NavbarDinamizando;
+export default DinamizandoNavbar;

@@ -1,8 +1,14 @@
-import CCAccordion from "@/components/conversation-club/ccAccordion";
-import NavbarDinamizando from "@/components/navbar/navbarDinamizando";
 import Head from "next/head";
 import React from "react";
+import DinamizandoNavbar from "@/components/Navbar/DinamizandoNavbar";
+import DinamizandoAccordion from "@/components/Accordion/DinamizandoAccordion";
+import DinamizandoFooter from "@/components/Footer/DinamizandoFooter";
 
+import imgURL from "../../utils/images/23-2/CCCT.png";
+
+const imgAlt = "Horários de aula do Conversation Club 2023.2";
+const jsonFirstAccordion = require("./fac.json");
+const jsonMap = require("./cc.json");
 const CC = () => {
   return (
     <>
@@ -12,8 +18,14 @@ const CC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavbarDinamizando />
-      <CCAccordion />
+      <DinamizandoNavbar />
+      <DinamizandoAccordion
+        imgURL={imgURL}
+        imgAlt={imgAlt}
+        jsonFirstAccordion={jsonFirstAccordion}
+        jsonMap={jsonMap}
+      />
+      <DinamizandoFooter />
     </>
   );
 };
