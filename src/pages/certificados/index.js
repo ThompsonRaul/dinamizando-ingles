@@ -1,7 +1,9 @@
-import CertContent from "@/components/Certificados/CertContent";
+import SearchLinks from "@/components/Certificados/SearchLinks";
 import DinamizandoFooter from "@/components/Footer/DinamizandoFooter";
 import DinamizandoNavbar from "@/components/Navbar/DinamizandoNavbar";
 import Head from "next/head";
+
+const dados = require("./links.json");
 
 const CC = () => {
   return (
@@ -13,7 +15,7 @@ const CC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DinamizandoNavbar />
-      <CertContent />
+      <SearchLinks dados={dados} />
       <DinamizandoFooter />
     </>
   );
