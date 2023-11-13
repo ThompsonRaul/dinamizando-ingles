@@ -13,8 +13,11 @@ const UE = () => {
   return (
     <>
       <Head>
-        <title>Dinamizando Inglês - UESC English</title>
-        <meta name="description" content="Dinamizando" />
+        <title>UESC English 2023.2</title>
+        <meta
+          name="description"
+          content="Página do UESC English 2023.2 do Dinamizando"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

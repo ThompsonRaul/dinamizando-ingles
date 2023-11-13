@@ -9,8 +9,11 @@ const CC = () => {
   return (
     <>
       <Head>
-        <title>Dinamizando Inglês - Certificados</title>
-        <meta name="description" content="Dinamizando" />
+        <title>Certificados</title>
+        <meta
+          name="description"
+          content="Página de Certificados do Dinamizando"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

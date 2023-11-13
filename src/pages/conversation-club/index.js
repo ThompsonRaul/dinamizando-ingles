@@ -13,8 +13,11 @@ const CC = () => {
   return (
     <>
       <Head>
-        <title>Dinamizando Inglês - Conversation Club</title>
-        <meta name="description" content="Dinamizando" />
+        <title>Conversation Club 2023.2</title>
+        <meta
+          name="description"
+          content="Página do Conversation Club 2023.2 do Dinamizando"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
