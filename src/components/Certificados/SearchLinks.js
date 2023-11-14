@@ -54,18 +54,51 @@ const SearchLinks = ({ dados }) => {
     setPesquisaRealizada(true);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handlePesquisa();
+    }
+  };
+
+  const handleClear = () => {
+    setTermoPesquisa("");
+  };
+
   return (
     <div className="my-4 min-h-screen flex flex-col items-center">
-      <input
-        type="text"
-        placeholder="Digite o nome para pesquisar"
-        value={termoPesquisa}
-        onChange={(e) => setTermoPesquisa(e.target.value)}
-        className="border border-gray-300 p-2 mb-2"
-      />
+      <div className="flex flex-col items-center relative">
+        <input
+          type="text"
+          value={termoPesquisa}
+          onChange={(e) => setTermoPesquisa(e.target.value)}
+          onKeyDown={handleKeyDown}
+          className="border border-gray-300 p-2 pr-10 rounded-full shadow-md focus:outline-none w-full"
+        />
+        {termoPesquisa && (
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2"
+            onClick={handleClear}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-6 w-6 text-gray-500 cursor-pointer"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        )}
+      </div>
       <button
         onClick={handlePesquisa}
-        className="bg-blue-500 text-white p-2 rounded hover:bg-blue-700"
+        className="mt-2 bg-blue-800 text-white p-2 rounded-full hover:bg-blue-950 transition duration-300 ease-in-out"
       >
         Pesquisar
       </button>

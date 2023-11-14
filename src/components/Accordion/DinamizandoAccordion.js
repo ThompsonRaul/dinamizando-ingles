@@ -1,6 +1,7 @@
 import React from "react";
 import { Accordion, AccordionItem, Link } from "@nextui-org/react";
 import FirstAccordionContent from "./FirstAccordionContent";
+import ScrollToTopButton from "../ScrollToTop/ScrollToTopButton";
 
 const DinamizandoAccordion = ({
   imgURL,
@@ -16,6 +17,7 @@ const DinamizandoAccordion = ({
           clique aqui
         </Link>
       </p>
+
       <Accordion className="min-h-screen" variant="splitted">
         <AccordionItem
           className="font-bold"
@@ -50,6 +52,8 @@ const DinamizandoAccordion = ({
           </AccordionItem>
         ))}
       </Accordion>
+
+      <ScrollToTopButton />
     </>
   );
 };
