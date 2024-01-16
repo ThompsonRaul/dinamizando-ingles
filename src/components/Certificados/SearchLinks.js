@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import unorm from "unorm"; // Importa a biblioteca unorm para normalização de caracteres
 
 const SearchResult = ({ pasta, subpasta, nome, link }) => (
   <a
@@ -37,16 +38,25 @@ const SearchLinks = ({ dados }) => {
   const [resultados, setResultados] = useState([]);
   const [pesquisaRealizada, setPesquisaRealizada] = useState(false);
 
+  const removerAcentos = (str) => {
+    return unorm
+      .nfd(str)
+      .replace(/[\u0300-\u036f]/g, "") // Remove caracteres de acento
+      .toLowerCase();
+  };
+
   const handlePesquisa = () => {
     // Realiza a pesquisa nos dados
     const resultadosPesquisa = dados.flatMap((pasta) =>
       pasta.subpastas.flatMap((subpasta) =>
         subpasta.subpastas.flatMap((arquivo) =>
-          arquivo.nome.toLowerCase().includes(termoPesquisa.toLowerCase())
+          removerAcentos(arquivo.nome)
+            .toLowerCase()
+            .includes(removerAcentos(termoPesquisa.toLowerCase()))
             ? { ...arquivo, pasta, subpasta }
-            : null
-        )
-      )
+            : null,
+        ),
+      ),
     );
 
     setResultados(resultadosPesquisa.filter(Boolean));
@@ -107,15 +117,20 @@ const SearchLinks = ({ dados }) => {
             <h2 className="text-center text-xl font-bold mb-2">
               Resultados da Pesquisa
             </h2>
-            {resultados.map((resultado, index) => (
-              <SearchResult
-                key={`${resultado.link}-${resultado.nome}-${index}`}
-                pasta={resultado.pasta}
-                subpasta={resultado.subpasta}
-                nome={`${resultado.nome}`}
-                link={resultado.link}
-              />
-            ))}
+            {resultados.map(
+              (resultado, index) => (
+                console.log(resultado.nome),
+                (
+                  <SearchResult
+                    key={`${resultado.link}-${resultado.nome}-${index}`}
+                    pasta={resultado.pasta}
+                    subpasta={resultado.subpasta}
+                    nome={`${resultado.nome}`}
+                    link={resultado.link}
+                  />
+                )
+              ),
+            )}
           </div>
         ) : pesquisaRealizada ? (
           <p className="text-center text-gray-600">
