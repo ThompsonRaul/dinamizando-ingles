@@ -117,20 +117,15 @@ const SearchLinks = ({ dados }) => {
             <h2 className="text-center text-xl font-bold mb-2">
               Resultados da Pesquisa
             </h2>
-            {resultados.map(
-              (resultado, index) => (
-                console.log(resultado.nome),
-                (
-                  <SearchResult
-                    key={`${resultado.link}-${resultado.nome}-${index}`}
-                    pasta={resultado.pasta}
-                    subpasta={resultado.subpasta}
-                    nome={`${resultado.nome}`}
-                    link={resultado.link}
-                  />
-                )
-              ),
-            )}
+            {resultados.map((resultado, index) => (
+              <SearchResult
+                key={`${resultado.link}-${resultado.nome}-${index}`}
+                pasta={resultado.pasta}
+                subpasta={resultado.subpasta}
+                nome={`${resultado.nome}`}
+                link={resultado.link}
+              />
+            ))}
           </div>
         ) : pesquisaRealizada ? (
           <p className="text-center text-gray-600">
