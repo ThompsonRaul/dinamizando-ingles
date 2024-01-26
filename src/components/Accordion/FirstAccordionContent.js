@@ -9,7 +9,7 @@ const FirstAccordionContent = ({ imgURL, imgAlt, jsonFirstAccordion }) => {
           Edital UESC n. {jsonFirstAccordion.edital} -{" "}
           <Link
             isExternal
-            href="https://www2.uesc.br/publicacoes/editais/arquivo/2023/08/138_2023.pdf"
+            href={jsonFirstAccordion.linkEdital}
             showAnchorIcon
           >
             clique aqui

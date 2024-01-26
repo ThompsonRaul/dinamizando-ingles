@@ -13,7 +13,7 @@ const DinamizandoAccordion = ({
     <>
       <p className="text-center py-5">
         Para acessar o semestre anterior,{" "}
-        <Link isExternal href={jsonFirstAccordion.link} showAnchorIcon>
+        <Link isExternal href={jsonFirstAccordion.linkSemestreAnterior} showAnchorIcon>
           clique aqui
         </Link>
       </p>

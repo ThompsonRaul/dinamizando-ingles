@@ -2,7 +2,7 @@ import { useState } from "react";
 import DinamizandoFooter from "@/components/Footer/DinamizandoFooter";
 import DinamizandoNavbar from "@/components/Navbar/DinamizandoNavbar";
 import Head from "next/head";
-import { Card, CardBody, CardHeader } from "@nextui-org/react";
+import { Button, Card, CardBody, CardHeader, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import Image from "next/image";
 
 import imgUE from "../utils/images/homepage/ue.png";
@@ -47,6 +47,8 @@ export default function Home() {
     },
   ];
 
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
   return (
     <>
       <Head>
@@ -73,7 +75,7 @@ export default function Home() {
         </section>
         <div className="gap-4 grid sm:grid-cols-1 md:grid-cols-2 w-[50%] mx-auto">
           {list.map((item, index) => (
-            <div key={index} onClick={() => openModal(item)}>
+            <div key={index} onClick={onOpen}>
               <Card className="py-4 mx-2 mb-4">
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                   <h4 className="font-bold text-large">{item.title}</h4>
@@ -93,24 +95,49 @@ export default function Home() {
       </div>
       <DinamizandoFooter />
 
-      {/* Modal */}
-      {isModalOpen && selectedItem && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">{selectedItem.title}</h2>
-            <Image
-              alt="Selected item"
-              className="object-cover rounded-xl"
-              src={selectedItem.img}
-              width={320}
-            />
-            <p className="mt-4">{selectedItem.description}</p>
-            <button className="mt-4" onClick={closeModal}>
-              Fechar Modal
-            </button>
-          </div>
-        </div>
-      )}
+      {list.map((item, index) => (
+        <>
+        <Modal key={`${item.title - index}`} isOpen={isOpen} onOpenChange={onOpenChange} size ="sm">
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1">{item.title}</ModalHeader>
+                <ModalBody>
+                  <p> 
+                    Porem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam pulvinar risus non risus hendrerit venenatis.
+                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam pulvinar risus non risus hendrerit venenatis.
+                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                  </p>
+                  <p>
+                    Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
+                    dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. 
+                    Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. 
+                    Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur 
+                    proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
+                  </p>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="danger" variant="light" onPress={onClose}>
+                    Close
+                  </Button>
+                  <Button color="primary" onPress={onClose}>
+                    Action
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
+      </>
+      ))}
+
+
+
     </>
   );
 }
