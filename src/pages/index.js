@@ -2,7 +2,19 @@ import { useState } from "react";
 import DinamizandoFooter from "@/components/Footer/DinamizandoFooter";
 import DinamizandoNavbar from "@/components/Navbar/DinamizandoNavbar";
 import Head from "next/head";
-import { Button, Card, CardBody, CardHeader, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  Link,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  useDisclosure,
+} from "@nextui-org/react";
 import Image from "next/image";
 
 import imgUE from "../utils/images/homepage/ue.png";
@@ -11,43 +23,44 @@ import imgPC from "../utils/images/homepage/pc.png";
 import imgCertificados from "../utils/images/homepage/certificados.png";
 
 export default function Home() {
-  const [isModalOpen, setModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
-
-  const openModal = (item) => {
-    setSelectedItem(item);
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setSelectedItem(null);
-    setModalOpen(false);
-  };
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const list = [
     {
       title: "UESC English",
       img: imgUE,
-      description: "Programa do Dinamizando 1",
+      description:
+        "Os cursos de inglês UESC English são ofertados semestralmente com o objetivo de desenvolver as quatro habilidades (ouvir, falar, ler, escrever) em língua inglesa à comunidade acadêmica (estudantes, professoras/es, servidoras/es e funcionárias/os terceirizadas/os) da UESC e à comunidade externa.",
+      url: "/uesc-english",
     },
     {
       title: "Conversation Club",
       img: imgCC,
-      description: "Programa do Dinamizando 2",
+      description:
+        "Os cursos de inglês Conversation Club são ofertados semestralmente com o objetivo de desenvolver as habilidades orais (ouvir e falar) em língua inglesa à comunidade acadêmica (estudantes, professoras/es, servidoras/es e funcionárias/os terceirizadas/os) da UESC e à comunidade externa.",
+      url: "/conversation-club",
     },
     {
       title: "Popcorn Club",
       img: imgPC,
-      description: "Programa do Dinamizando 3",
+      description:
+        "As oficinas de inglês Popcorn Club têm o objetivo de proporcionar um espaço interativo para o desenvolvimento das habilidades em língua inglesa à comunidade acadêmica (estudantes, professoras/es, servidoras/es e funcionárias/os terceirizadas/os) da UESC e à comunidade externa, por meio da exibição dialogada de produções audiovisuais em uma perspectiva intercultural.",
+      url: "/popcorn-club",
     },
     {
       title: "Certificados",
       img: imgCertificados,
-      description: "Meio para facilitar a busca por certificados",
+      description:
+        "A partir dos editais de 2024.1, os certificados das ações do Projeto de Extensão Dinamizando o Ensino da Língua Inglesa na UESC serão disponibilizados diretamente em formato PDF pelo buscador de certificados, cabendo à cada cursista fazer a busca e o download dos certificados que tiver direito. Os certificados impressos que estavam armazenados na sala do projeto, anteriores ao semestre 2022.1, foram digitalizados e disponibilizados em nossa base de dados de certificados. Caso ainda precise de ajuda, envie e-mail para uescenglish@gmail.com com o assunto “Certificado”.",
+      url: "/certificados",
     },
   ];
 
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  const openModal = (item) => {
+    setSelectedItem(item);
+    onOpen();
+  };
 
   return (
     <>
@@ -58,24 +71,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DinamizandoNavbar />
-      <div className={`min-h-screen ${isModalOpen ? "blur-md" : ""}`}>
-        <section className="bg-white dark:bg-gray-800">
-          <div className="container px-6 py-8 mx-auto">
-            <h2 className="text-4xl font-bold mb-2 text-gray-800 dark:text-white">
-              Bem vindos ao Dinamizando o Ensino da Língua Inglesa na UESC!
-            </h2>
-            <p className="text-gray-700 dark:text-gray-400 mb-4">
-              O Dinamizando é um projeto de extensão da UESC que tem como
-              objetivo oferecer cursos de inglês para a comunidade acadêmica e
-              administrativa da universidade. O projeto é coordenado pelo
-              Departamento de Letras e Artes (DLA) e pela Pró-Reitoria de
-              Extensão (PROEX).
-            </p>
+      <div className={`min-h-screen ${isOpen ? "blur-md" : ""}`}>
+        <section className="bg-white dark:bg-gray-800 flex justify-center items-center">
+          <div className="max-w-[50%] mx-auto">
+            <div className="container py-8 mx-auto text-left">
+              <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
+                Bem vindos ao Dinamizando o Ensino da Língua Inglesa na UESC!
+              </h2>
+              <p className=" text-sm text-left text-gray-700 dark:text-gray-400 mb-4">
+                O Dinamizando é um projeto de extensão da UESC que tem como
+                objetivo oferecer cursos de inglês para universidade, bem como
+                para a comunidade externa. O projeto é coordenado pelo
+                Departamento de Letras e Artes (DLA) e pela Pró-Reitoria de
+                Extensão (PROEX).
+              </p>
+            </div>
           </div>
         </section>
         <div className="gap-4 grid sm:grid-cols-1 md:grid-cols-2 w-[50%] mx-auto">
           {list.map((item, index) => (
-            <div key={index} onClick={onOpen}>
+            <div key={index} onClick={() => openModal(item)}>
               <Card className="py-4 mx-2 mb-4">
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                   <h4 className="font-bold text-large">{item.title}</h4>
@@ -95,49 +110,26 @@ export default function Home() {
       </div>
       <DinamizandoFooter />
 
-      {list.map((item, index) => (
-        <>
-        <Modal key={`${item.title - index}`} isOpen={isOpen} onOpenChange={onOpenChange} size ="sm">
-          <ModalContent>
-            {(onClose) => (
-              <>
-                <ModalHeader className="flex flex-col gap-1">{item.title}</ModalHeader>
-                <ModalBody>
-                  <p> 
-                    Porem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam pulvinar risus non risus hendrerit venenatis.
-                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam pulvinar risus non risus hendrerit venenatis.
-                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                  </p>
-                  <p>
-                    Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
-                    dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. 
-                    Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. 
-                    Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur 
-                    proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
-                  </p>
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="danger" variant="light" onPress={onClose}>
-                    Close
-                  </Button>
-                  <Button color="primary" onPress={onClose}>
-                    Action
-                  </Button>
-                </ModalFooter>
-              </>
-            )}
-          </ModalContent>
-        </Modal>
-      </>
-      ))}
-
-
-
+      <Modal isOpen={isOpen} onOpenChange={onClose} size="sm">
+        <ModalContent>
+          <ModalHeader className="flex flex-col gap-1">
+            {selectedItem?.title}
+          </ModalHeader>
+          <ModalBody>
+            <p>{selectedItem?.description}</p>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="danger" variant="light" onPress={onClose}>
+              Fechar
+            </Button>
+            <Link href={selectedItem?.url}>
+              <Button color="primary" onPress={onClose}>
+                Ir para
+              </Button>
+            </Link>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 }

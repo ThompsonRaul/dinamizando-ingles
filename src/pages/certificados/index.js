@@ -18,7 +18,21 @@ const CC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DinamizandoNavbar />
-      <SearchLinks dados={dados} />
+      <div className="min-h-screen">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-2xl font-bold mt-4">Buscador de Certificados</h1>
+          <div className="max-w-[50%] mx-auto">
+            <p className="text-left text-xs mt-4">
+              Orientação: digite e busque o seu nome ou sobrenome; todos os
+              certificados correspondentes à busca que estiverem disponíveis em
+              nossa base de dados aparecerão; clique em cada arquivo (seus
+              certificados) e faça o download.
+            </p>
+          </div>
+        </div>
+        <SearchLinks dados={dados} />
+      </div>
+
       <DinamizandoFooter />
     </>
   );

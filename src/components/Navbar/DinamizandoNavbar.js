@@ -18,7 +18,8 @@ const DinamizandoNavbar = () => {
     { id: 1, name: "Home", url: "/" },
     { id: 2, name: "UESC English", url: "/uesc-english" },
     { id: 3, name: "Conversation Club", url: "/conversation-club" },
-    { id: 4, name: "Certificados", url: "/certificados" },
+    { id: 4, name: "Popcorn Club", url: "/popcorn-club" },
+    { id: 5, name: "Certificados", url: "/certificados" },
   ];
 
   return (

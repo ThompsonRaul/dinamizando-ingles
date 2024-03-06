@@ -74,7 +74,7 @@ const SearchLinks = ({ dados }) => {
   };
 
   return (
-    <div className="my-4 min-h-screen flex flex-col items-center sm:w-full md:w-">
+    <div className="my-4 flex flex-col items-center sm:w-full md:w-">
       <div className="flex flex-col items-center relative">
         <input
           type="text"
