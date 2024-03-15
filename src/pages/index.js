@@ -18,7 +18,7 @@ import {
 import Image from "next/image";
 
 import imgUE from "../utils/images/homepage/ue.png";
-import imgCC from "../utils/images/homepage/test-cc.png";
+import imgCC from "../utils/images/homepage/cc.png";
 import imgPC from "../utils/images/homepage/pc.png";
 import imgCertificados from "../utils/images/homepage/certificados.png";
 
