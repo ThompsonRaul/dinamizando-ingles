@@ -24,14 +24,14 @@ export default async function sendMail(req, res) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "rvieira141@gmail.com", // Use variáveis de ambiente para segurança
-        pass: "987645AFDsv",
+        user: "", // Use variáveis de ambiente para segurança
+        pass: "",
       },
     });
 
     const mailOptions = {
-      from: "rvieira141@gmail.com",
-      to: "thebrextreme@gmail.com",
+      from: "",
+      to: "",
       subject: `Nova Inscrição de ${nomeCompleto}`,
       text: `
         Nome Completo: ${nomeCompleto}
