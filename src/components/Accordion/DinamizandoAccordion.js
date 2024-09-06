@@ -9,11 +9,38 @@ const DinamizandoAccordion = ({
   jsonFirstAccordion,
   jsonMap,
 }) => {
+  const renderContent = (text) => {
+    // Verifica se o texto contém um link e o separa para renderizar o link corretamente
+    const linkPattern = /(https?:\/\/[^\s]+)/g;
+    const parts = text.split(linkPattern);
+
+    return parts.map((part, index) => {
+      if (part.match(linkPattern)) {
+        return (
+          <Link
+            key={index}
+            isExternal
+            href={part}
+            showAnchorIcon
+            className="text-blue-500"
+          >
+            {part}
+          </Link>
+        );
+      }
+      return <span key={index}>{part}</span>;
+    });
+  };
+
   return (
     <>
       <p className="text-center py-5">
         Para acessar o semestre anterior,{" "}
-        <Link isExternal href={jsonFirstAccordion.linkSemestreAnterior} showAnchorIcon>
+        <Link
+          isExternal
+          href={jsonFirstAccordion.linkSemestreAnterior}
+          showAnchorIcon
+        >
           clique aqui
         </Link>
       </p>
@@ -43,7 +70,7 @@ const DinamizandoAccordion = ({
                 {entrevistado.descricao}
                 <div className="font-normal">
                   {entrevistado.pessoas.map((pessoa, index) => (
-                    <p key={`${pessoa}-${index}`}>{pessoa}</p>
+                    <p key={`${pessoa}-${index}`}>{renderContent(pessoa)}</p>
                   ))}
                 </div>
                 <br />
