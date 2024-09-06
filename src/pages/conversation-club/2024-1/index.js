@@ -4,19 +4,19 @@ import DinamizandoNavbar from "@/components/Navbar/DinamizandoNavbar";
 import DinamizandoAccordion from "@/components/Accordion/DinamizandoAccordion";
 import DinamizandoFooter from "@/components/Footer/DinamizandoFooter";
 
-import imgURL from "../../utils/images/24-2/CCCT.png";
+import imgURL from "../../../utils/images/24-2/CCCT.png";
 
-const imgAlt = "Horários de aula do Conversation Club 2024.2";
+const imgAlt = "Horários de aula do Conversation Club 2024.1";
 const jsonFirstAccordion = require("./fac.json");
 const jsonMap = require("./cc.json");
 const CC = () => {
   return (
     <>
       <Head>
-        <title>Conversation Club 2024.2</title>
+        <title>Conversation Club 2024.1</title>
         <meta
           name="description"
-          content="Página do Conversation Club 2024.2 do Dinamizando"
+          content="Página do Conversation Club 2024.1 do Dinamizando"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
