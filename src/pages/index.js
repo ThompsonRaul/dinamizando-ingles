@@ -88,11 +88,11 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="gap-4 grid sm:grid-cols-1 md:grid-cols-2 w-[50%] mx-auto">
+        <div className="gap-4 grid sm:grid-cols-1 md:grid-cols-4 w-[50%] mx-auto">
           {list.map((item, index) => (
             <div key={index} onClick={() => openModal(item)}>
               <Card className="py-4 mx-2 mb-4">
-                <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
+                <CardHeader className="pb-0 pt-2 px-4 flex-col items-center min-h-[60px] flex justify-center text-center">
                   <h4 className="font-bold text-large">{item.title}</h4>
                 </CardHeader>
                 <CardBody className="overflow-visible py-2">
