@@ -4,19 +4,19 @@ import DinamizandoNavbar from "@/components/Navbar/DinamizandoNavbar";
 import DinamizandoAccordion from "@/components/Accordion/DinamizandoAccordion";
 import DinamizandoFooter from "@/components/Footer/DinamizandoFooter";
 
-import imgURL from "../../utils/images/25-1/UECT.png";
+import imgURL from "../../../utils/images/24-2/CCCT.png";
 
-const imgAlt = "Horários de aula do UESC English 2025.1";
+const imgAlt = "Horários de aula do Conversation Club 2024.2";
 const jsonFirstAccordion = require("./fac.json");
-const jsonMap = require("./ue.json");
-const UE = () => {
+const jsonMap = require("./cc.json");
+const CC = () => {
   return (
     <>
       <Head>
-        <title>UESC English 2025.1</title>
+        <title>Conversation Club 2024.2</title>
         <meta
           name="description"
-          content="Página do UESC English 2025.1 do Dinamizando"
+          content="Página do Conversation Club 2024.2 do Dinamizando"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -33,4 +33,4 @@ const UE = () => {
   );
 };
 
-export default UE;
+export default CC;
