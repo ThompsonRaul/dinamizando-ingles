@@ -76,21 +76,25 @@ export default function Home() {
           <div className="max-w-[50%] mx-auto">
             <div className="container py-8 mx-auto text-left">
               <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
-                Bem vindos ao Dinamizando o Ensino da Língua Inglesa na UESC!
+                Bem-vindos ao Dinamizando o Ensino da Língua Inglesa na UESC!
               </h2>
               <p className=" text-sm text-left text-gray-700 dark:text-gray-400 mb-4">
-                O Dinamizando é um projeto de extensão da UESC que tem como
-                objetivo oferecer cursos de inglês para universidade, bem como
-                para a comunidade externa. O projeto é coordenado pelo
-                Departamento de Letras e Artes (DLA) e pela Pró-Reitoria de
-                Extensão (PROEX).
+                O Dinamizando é um projeto de extensão da UESC que oferece
+                cursos de inglês para a comunidade acadêmica e externa. O
+                projeto é coordenado pelo Departamento de Letras e Artes (DLA) e
+                pela Pró-Reitoria de Extensão (PROEX).
               </p>
             </div>
           </div>
         </section>
+
         <div className="gap-4 grid sm:grid-cols-1 md:grid-cols-4 w-[50%] mx-auto">
           {list.map((item, index) => (
-            <div key={index} onClick={() => openModal(item)}>
+            <div
+              key={index}
+              onClick={() => openModal(item)}
+              className="transition-transform transform hover:scale-105"
+            >
               <Card className="py-4 mx-2 mb-4">
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-center min-h-[60px] flex justify-center text-center">
                   <h4 className="font-bold text-large">{item.title}</h4>
