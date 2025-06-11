@@ -20,6 +20,7 @@ const DinamizandoNavbar = () => {
     { id: 3, name: "Conversation Club", url: "/conversation-club" },
     { id: 4, name: "Popcorn Club", url: "/popcorn-club" },
     { id: 5, name: "Certificados", url: "/certificados" },
+    { id: 5, name: "18 anos de Dinamizando!", url: "/18anos" },
   ];
 
   return (
