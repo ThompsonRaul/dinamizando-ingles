@@ -22,6 +22,7 @@ import imgUE from "../utils/images/homepage/ue.webp";
 import imgCC from "../utils/images/homepage/cc.webp";
 import imgPC from "../utils/images/homepage/pc.webp";
 import imgCertificados from "../utils/images/homepage/certificados.webp";
+import imgUEL from "../utils/images/homepage/uel.png";
 
 export default function Home() {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -29,11 +30,11 @@ export default function Home() {
 
   const list = [
     {
-      title: "UESC English",
-      img: imgUE,
+      title: "Certificados",
+      img: imgCertificados,
       description:
-        "Os cursos de inglês UESC English são ofertados semestralmente com o objetivo de desenvolver as quatro habilidades (ouvir, falar, ler, escrever) em língua inglesa à comunidade acadêmica (estudantes, professoras/es, servidoras/es e funcionárias/os terceirizadas/os) da UESC e à comunidade externa.",
-      url: "/uesc-english",
+        'A partir dos editais de 2024.1, os certificados das ações do Projeto de Extensão Dinamizando o Ensino da Língua Inglesa na UESC serão disponibilizados diretamente em formato PDF pelo buscador de certificados, cabendo à cada cursista fazer a busca e o download dos certificados que tiver direito. Os certificados impressos que estavam armazenados na sala do projeto, anteriores ao semestre 2022.1, foram digitalizados e disponibilizados em nossa base de dados de certificados. Caso ainda precise de ajuda, envie e-mail para uescenglish@gmail.com com o assunto "Certificado".',
+      url: "/certificados",
     },
     {
       title: "Conversation Club",
@@ -50,11 +51,18 @@ export default function Home() {
       url: "/popcorn-club",
     },
     {
-      title: "Certificados",
-      img: imgCertificados,
+      title: "UESC English",
+      img: imgUE,
       description:
-        'A partir dos editais de 2024.1, os certificados das ações do Projeto de Extensão Dinamizando o Ensino da Língua Inglesa na UESC serão disponibilizados diretamente em formato PDF pelo buscador de certificados, cabendo à cada cursista fazer a busca e o download dos certificados que tiver direito. Os certificados impressos que estavam armazenados na sala do projeto, anteriores ao semestre 2022.1, foram digitalizados e disponibilizados em nossa base de dados de certificados. Caso ainda precise de ajuda, envie e-mail para uescenglish@gmail.com com o assunto "Certificado".',
-      url: "/certificados",
+        "Os cursos de inglês UESC English são ofertados semestralmente com o objetivo de desenvolver as quatro habilidades (ouvir, falar, ler, escrever) em língua inglesa à comunidade acadêmica (estudantes, professoras/es, servidoras/es e funcionárias/os terceirizadas/os) da UESC e à comunidade externa.",
+      url: "/uesc-english",
+    },
+    {
+      title: "UESC English Labs",
+      img: imgUEL,
+      description:
+        "O UESC English Labs – Laboratório Extensionista de Língua Inglesa tem como objetivo incentivar a proposição e realização de cursos e oficinas, de curta e média duração, voltados a diferentes dimensões do ensino-aprendizagem da língua inglesa, contemplando aspectos linguísticos, literários e/ou culturais, a serem realizados no escopo do Projeto de Extensão Dinamizando o ensino da língua inglesa na UESC.",
+      url: "/uesc-english-labs",
     },
   ];
 
@@ -121,7 +129,7 @@ export default function Home() {
         {/* Grid de Cards */}
         <section className="py-6">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
               {list.map((item, index) => (
                 <button
                   key={index}

@@ -19,7 +19,7 @@ const DinamizandoNavbar = () => {
     { id: 2, name: "Certificados", url: "/certificados" },
     { id: 3, name: "Conversation Club", url: "/conversation-club" },
     { id: 4, name: "UESC English", url: "/uesc-english" },
-    { id: 5, name: "Uesc English Labs", url: "/uesc-english-labs" },
+    { id: 5, name: "UESC English Labs", url: "/uesc-english-labs" },
     { id: 6, name: "Popcorn Club", url: "/popcorn-club" },
   ];
 
