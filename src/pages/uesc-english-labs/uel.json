@@ -3,13 +3,13 @@
     "nome": "Cronograma",
     "tipos": [
       {
-        "descricao": "",
+        "descricao": "Cronograma",
         "pessoas": [
-          "O período para inscrições será das 8h do dia 6 de abril às 20h do dia 5 de maio de 2026;",
-          "O resultado preliminar será divulgado no dia 3 de junho de 2026 (quarta-feira), na página do UESC English;",
-          "A interposição de recurso, devidamente fundamentado, ocorrerá nos dias 5 a 9 de junho de 2026 (sexta à terça-feira), pelo e-mail do projeto (uescenglish@gmail.com), com o assunto: RECURSO UESC English Labs;",
-          "O resultado final será divulgado no dia 11 de junho de 2026 (quinta-feira), na página do UESC English;",
-          "O período das atividades será de  10 de agosto a 10 de dezembro de 2026."
+          "O período para inscrições será das 8h do dia 6 de abril às 20h do dia 5 de maio de 2026.",
+          "O resultado preliminar será divulgado no dia 3 de junho de 2026 (quarta-feira), na página do UESC English.",
+          "A interposição de recurso, devidamente fundamentado, ocorrerá nos dias 5 a 9 de junho de 2026 (sexta à terça-feira), pelo e-mail do projeto (uescenglish@gmail.com), com o assunto: RECURSO UESC English Labs.",
+          "O resultado final será divulgado no dia 11 de junho de 2026 (quinta-feira), na página do UESC English.",
+          "O período das atividades será de 10 de agosto a 10 de dezembro de 2026."
         ]
       }
     ]
@@ -18,21 +18,72 @@
     "nome": "Eixos Temáticos",
     "tipos": [
       {
+        "descricao": "Eixos Temáticos",
+        "pessoas": [
+          "Artes e língua inglesa.",
+          "Cultura e mídia anglófona.",
+          "Educação antirracista e decolonialidade.",
+          "Emoções e ensino-aprendizagem de língua inglesa.",
+          "Escrita acadêmica em inglês.",
+          "Escrita criativa em inglês.",
+          "Formação docente de língua inglesa.",
+          "Inglês para fins específicos.",
+          "Linguagem, identidade e diversidade no ensino de língua inglesa.",
+          "Literaturas em língua inglesa.",
+          "Práticas de ensino de língua inglesa.",
+          "Tecnologias digitais e língua inglesa.",
+          "Tradução."
+        ]
+      }
+    ]
+  },
+  {
+    "nome": "Resultado Preliminar",
+    "tipos": [
+      {
+        "descricao": "Tecnologias Digitais e Ensino de Língua Inglesa: Produção de Materiais Didáticos com Canva e CapCut",
+        "pessoas": [
+          "Proponentes: Erik Sales de Jesus e Arabella Cerqueira Santos.",
+          "Resultado: Proposta aprovada."
+        ]
+      },
+      {
+        "descricao": "Ensino de língua inglesa na educação infantil: práticas lúdicas e afetivas no processo de aprendizagem",
+        "pessoas": [
+          "Proponente: Emilie Rebouças de Agustinho Ferreira.",
+          "Resultado: Proposta aprovada."
+        ]
+      },
+      {
+        "descricao": "De Teoria e Prática da Tradução",
+        "pessoas": [
+          "Proponentes: Walkiria França Vieira e Teixeira, Mayara Santos Trindade de Paz e Maria Clara Ludovico Nascimento de Menezes.",
+          "Resultado: Proposta aprovada."
+        ]
+      }
+    ]
+  },
+  {
+    "nome": "Resultado Final",
+    "tipos": [
+      {
         "descricao": "",
         "pessoas": [
-          "Artes e língua inglesa;",
-          "Cultura e mídia anglófona;",
-          "Educação antirracista e decolonialidade;",
-          "Emoções e ensino-aprendizagem de língua inglesa;",
-          "Escrita acadêmica em inglês;",
-          "Escrita criativa em inglês;",
-          "Formação docente de língua inglesa;",
-          "Inglês para fins específicos;",
-          "Linguagem, identidade e diversidade no ensino de língua inglesa;",
-          "Literaturas em língua inglesa;",
-          "Práticas de ensino de língua inglesa;",
-          "Tecnologias digitais e língua inglesa;",
-          "Tradução."
+          "Propostas aprovadas, de acordo com os termos do EDITAL UESC Nº 43/2026 – UESC English Labs:"
+        ]
+      },
+      {
+        "descricao": "Tecnologias Digitais e Ensino de Língua Inglesa: Produção de Materiais Didáticos com Canva e CapCut",
+        "pessoas": ["Autoria: Erik Sales de Jesus e Arabella Cerqueira Santos."]
+      },
+      {
+        "descricao": "Ensino de língua inglesa na educação infantil: práticas lúdicas e afetivas no processo de aprendizagem",
+        "pessoas": ["Autoria: Emilie Rebouças de Agustinho Ferreira."]
+      },
+      {
+        "descricao": "De Teoria e Prática da Tradução",
+        "pessoas": [
+          "Autoria: Walkiria França Vieira e Teixeira, Mayara Santos Trindade de Paz e Maria Clara Ludovico Nascimento de Menezes."
         ]
       }
     ]
